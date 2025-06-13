@@ -1,13 +1,46 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/onest-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/onest-medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/onest-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/onest-bold.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Onest';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:'Onest'
 }
