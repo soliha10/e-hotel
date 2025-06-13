@@ -35,13 +35,34 @@ const Hero = () => {
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
+    {
+      image: neptun,
+      rating: '8.9',
+      name: "Hotel Neptun Tashkent Pool&Spa",
+      price: 'от $120',
+      location: '8 ул. Лянгар, Ташкент'
+    },
+    {
+      image: evening,
+      rating: '8.9',
+      name: "Hotel Neptun Tashkent Pool&Spa",
+      price: 'от $120',
+      location: '8 ул. Лянгар, Ташкент'
+    },
+    {
+      image: scene,
+      rating: '8.9',
+      name: "Hotel Neptun Tashkent Pool&Spa",
+      price: 'от $120',
+      location: '8 ул. Лянгар, Ташкент'
+    },
 
   ];
 
   return (
     <section >
       <div className="w-[1240px] mx-auto px-5">
-        <div className="relative ">
+        <div className=" ">
           <div className="flex items-start justify-between mb-[50px] ">
             <div className="w-[720px] me-[116px] ">
               <h1 className="text-[46px] font-bold leading-[68px] tracking-[0.98px] text-white  ">Собирай чемодан, остальное мы возьмем на себя</h1>
@@ -56,30 +77,34 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <Swiper
-            slidesPerView="auto"
-            spaceBetween={24}
-            loop={false}
-            centeredSlides={false}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            onMouseMove={Autoplay}
-            navigation={false}
-            modules={[Autoplay]}
-            className="mySwiper"
-          >
-            {cardItems.map(({ image, rating, name, price, location }, index) => (
-              <SwiperSlide key={index} >
-                <HotelCard image={image} rating={rating} name={name} price={price} location={location} />
-              </SwiperSlide>
-            )
-            )}
-          </Swiper>
-          <FormHero />
         </div>
       </div>
+      <Swiper
+        slidesPerView="auto"
+        spaceBetween={24}
+        loop={false}
+        centeredSlides={false}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        onMouseMove={Autoplay}
+        navigation={false}
+        modules={[Autoplay]}
+        className="mySwiper w-full "
+      >
+        {cardItems.map(({ image, rating, name, price, location }, index) => (
+          <SwiperSlide key={index} >
+            <HotelCard image={image} rating={rating} name={name} price={price} location={location} />
+          </SwiperSlide>
+        )
+        )}
+      </Swiper>
+      <div className="w-[1240px] mx-auto px-5 relative">
+        <FormHero />
+      </div>
+
+
     </section>
   )
 }

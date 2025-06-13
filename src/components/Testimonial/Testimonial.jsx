@@ -39,9 +39,9 @@ const Testimonial = () => {
     },
   ]
   return (
-    <section className="bg-[#232E40] bg-opacity-90 ">
+    <section className="bg-[#232E40] bg-opacity-90 py-20 mx-auto">
       <div className="w-[1240px] mx-auto px-5">
-        <div className="py-20">
+        <div className="">
           <div className="flex items-center justify-between">
             <h2 className=" text-[#fff]  text-[32px] font-bold mb-10 ">Что думают о нас туристы?</h2>
             <div>
@@ -64,6 +64,8 @@ const Testimonial = () => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
           <Swiper
             ref={swiperRef}
             slidesPerView="auto"
@@ -77,7 +79,7 @@ const Testimonial = () => {
             onMouseMove={Autoplay}
             navigation={false}
             modules={[Autoplay]}
-            className="mySwiper"
+            className="mySwiper w-full mx-auto"
           >
             {feedbacks.map(({ id, feedback, userPic, userName }, index) => (
               <SwiperSlide className="flex text-left" key={index}  >
@@ -85,8 +87,6 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
     </section>
   )
 }

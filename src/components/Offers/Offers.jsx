@@ -80,9 +80,9 @@ const Offers = () => {
 
   const [activeBtn, setActiveBtn] = useState(null);
   return (
-    <section>
+    <section className="pb-[100px]">
       <div className="w-[1240px] mx-auto px-5">
-        <div className="pb-[100px]">
+        <div >
           <div className="flex items-center justify-between">
             <h2 className=" text-[#232E40]  text-[32px] font-bold mb-10 ">Сезонные предложения</h2>
             <div>
@@ -105,6 +105,9 @@ const Offers = () => {
               </button>
             </div>
           </div>
+
+        </div>
+      </div>
           <Swiper
             ref={swiperRef}
             slidesPerView="auto"
@@ -131,8 +134,6 @@ const Offers = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
     </section>
   )
 }

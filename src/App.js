@@ -10,7 +10,7 @@ import './index.css';
 function App() {
 	return (
 		<div className='bg-[#FAFAFA]'>
-			<section className="bg-[url('./assets/images/bg.png')] ] pb-[147px] bg-no-repeat bg-cover ">
+			<section className="bg-[url('./assets/images/bg.png')]  pb-[147px] bg-no-repeat bg-cover ">
 				<Header />
 				<Hero />
 			</section>

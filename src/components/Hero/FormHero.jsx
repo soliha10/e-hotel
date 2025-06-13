@@ -6,7 +6,7 @@ import search from "../../assets/images/search-icon.svg";
 
 const FormHero = () => {
   return (
-    <div className="absolute bg-white w-full p-12 rounded-[40px] shadow-lg bottom-[-65%]   ">
+    <div className="absolute bg-white w-full p-12 rounded-[40px] shadow-lg top-11   ">
       <div>
         <ul className="flex gap-6 text-[#777E90] border-b pb-[30px] mb-12 ">
           <li className="hover:text-[#232E40]  " ><a href="/"  >Отели</a></li>
