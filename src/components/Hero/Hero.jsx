@@ -61,17 +61,17 @@ const Hero = () => {
 
   return (
     <section >
-      <div className="w-[1240px] mx-auto px-5">
+      <div className="w-full max-w-[1240px] mx-auto px-5">
         <div className=" ">
-          <div className="flex items-start justify-between mb-[50px] ">
-            <div className="w-[720px] me-[116px] ">
-              <h1 className="text-[46px] font-bold leading-[68px] tracking-[0.98px] text-white  ">Собирай чемодан, остальное мы возьмем на себя</h1>
+          <div className="flex flex-col md:flex-row pt-8 md:pt-0 items-center md:items-start md:justify-between mb-[50px] ">
+            <div className="md:w-[720px] mb-4 md:mb-0 w-[350px] text-center md:text-left lg:me-[116px] ">
+              <h1 className="md:text-[46px] text-3xl font-bold md:leading-[45px] lg:leading-[68px] md:tracking-[0.98px] text-white  ">Собирай чемодан, остальное мы возьмем на себя</h1>
             </div >
-            <div className="w-[384px] ">
-              <p className="text-[#B7BFD5] tracking-[0.32px] leading-[25px] mb-4">Добро пожаловать на наш уникальный портал, который предоставляет полный спектр услуг для туристов в Узбекистане! </p>
-              <div className="flex items-center">
-                <button className="bg-[#3276FF] w-[129px] p-4 text-center rounded-2xl text-white font-medium me-[50px]">Все отели</button>
-                <button className="inline-flex gap-[10px] text-white font-medium  ">
+            <div className="md:w-[384px] w-[380px] ">
+              <p className="text-[#B7BFD5] text-center md:text-left lg:tracking-[0.32px] lg:leading-[25px] mb-4">Добро пожаловать на наш уникальный портал, который предоставляет полный спектр услуг для туристов в Узбекистане! </p>
+              <div className="flex items-center justify-center md:justify-start">
+                <button className="bg-[#3276FF] text-xs md:text-sm  md:w-[129px] p-4 text-center rounded-2xl text-white font-medium me-[50px]">Все отели</button>
+                <button className="inline-flex gap-[10px] items-center text-xs md:text-sm  text-white font-medium  ">
                   <img src={playBtn} alt="btn" />
                   Посмотреть видео</button>
               </div>
@@ -100,7 +100,7 @@ const Hero = () => {
         )
         )}
       </Swiper>
-      <div className="w-[1240px] mx-auto px-5 relative">
+      <div className="w-full max-w-[1240px] mx-auto  relative">
         <FormHero />
       </div>
 

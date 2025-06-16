@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#0F172A] z-50 relative">
+    <header className="z-50 relative">
       <div className="w-full max-w-[1240px] mx-auto px-5">
         <div className="py-6 md:py-10 flex items-center justify-between text-white text-sm leading-[22px]">
           <a href="/">

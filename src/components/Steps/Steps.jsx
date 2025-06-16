@@ -27,15 +27,15 @@ const Steps = () => {
 
   return (
     <section >
-      <div className="w-[1240px] mx-auto px-5" >
-        <div className='pt-[252px] pb-[100px] '>
-          <h2 className='text-center text-[#232E40] text-[32px] font-bold mb-4 '>Простые 3 шага для вашего идеального путешествия</h2>
+      <div className=" w-full max-w-[1240px] mx-auto px-5" >
+        <div className=' pt-[400px] lg:pt-[252px] pb-[100px] '>
+          <h2 className='text-center text-[#232E40] text-2xl md:text-[32px] font-bold mb-4 '>Простые 3 шага для вашего идеального путешествия</h2>
           <p className='text-center text-[18px] text-[#777E90] mb-10 '>Упростите свои планы для путешествия – с нами это легко!</p>
-          <div className=' flex relative '>
-            <img className='me-[74px] ' src={leftPic} alt="pic" />
-            <StepsUser classname={"absolute top-[42px] left-8 "} id={1} userName={"Азиза Муминова"} userPic={woman} />
-            <StepsUser classname={"absolute top-[172px] left-96 "} id={2} userName={"Андрей Туйгунов"} userPic={man} />
-            <ol className='flex flex-col justify-center gap-6'>
+          <div className=' flex relative flex-col lg:flex-row text-center '>
+            <img className='md:me-[74px] mb-8  hidden lg:inline-block lg:w-[538px] lg:h-[644px] ' src={leftPic} alt="pic" />
+            <StepsUser classname={"absolute top-[42px] left-8 hidden lg:flex "} id={1} userName={"Азиза Муминова"} userPic={woman} />
+            <StepsUser classname={"absolute top-[172px] left-96 hidden lg:flex "} id={2} userName={"Андрей Туйгунов"} userPic={man} />
+            <ol className='flex flex-col justify-center items-center lg:items-start  gap-6'>
               {steps.map(({ stepNum, name, text }) => (
                 <StepsItem stepNum={stepNum} name={name} text={text} />
               ))}

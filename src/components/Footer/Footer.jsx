@@ -11,14 +11,14 @@ const Footer = () => {
   return (
     <footer>
       <section>
-        <div className="w-[1240px] mx-auto px-5">
-          <div className='py-[60px]'>
+        <div className=" w-full max-w-[1240px] mx-auto px-5">
+          <div className='py-[30px] md:py-[60px]'>
             <a href="/" className='mb-4 inline-block'>
               <img src={footLogo} alt="Pic" />
             </a>
             <div className='flex items-start  '>
-              <div className='w-[282px] me-[137px]'>
-                <p className='text-sm text-[#777E90]  mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
+              <div className='w-full  md:max-w-[282px] md:me-[137px]'>
+                <p className='md:text-sm text-xs text-[#777E90]  mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
                 <ul className='flex gap-x-6  '>
                   {socialIcons.map((item) => (
                     <li >
@@ -27,19 +27,19 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
-              <div className='flex gap-x-[145px]'>
+              <div className='flex gap-10 md:gap-x-[145px]'>
 
-                <ul className='flex flex-col gap-y-3' >
+                <ul className='flex flex-col gap-y-1 md:gap-y-3' >
                   {locations.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-3'>
+                <ul className='flex flex-col gap-y-1 md:gap-y-3'>
                   {hotels.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-3' >
+                <ul className='flex flex-col gap-y-1 md:gap-y-3' >
                   {generalInfo.map((item) => (
                     <FootItem item={item} />
                   ))}
@@ -49,8 +49,8 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <section className='border border-[#b7bfd533] py-[60px]'>
-        <div className="w-[1240px] mx-auto px-5">
+      <section className='border border-[#b7bfd533] py-[30px] md:py-[60px]'>
+        <div className="w-full max-w-[1240px] mx-auto px-5">
           <span className='text-sm text-[#777E90] block text-center'>E-Mehmon © 2023. Все права защищены. </span>
         </div>
       </section>

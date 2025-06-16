@@ -83,11 +83,11 @@ const Popular = () => {
 
   return (
     <section>
-      <div className="w-[1240px] mx-auto px-5">
+      <div className=" w-full max-w-[1240px] mx-auto px-5">
         <div className="pb-[100px] ">
-          <h2 className="text-center text-[#232E40] text-[32px] font-bold mb-4 ">Дома, которые нравятся гостям</h2>
+          <h2 className="text-center text-[#232E40] text-2xl md:text-[32px] font-bold mb-4 ">Дома, которые нравятся гостям</h2>
           <p className="text-center text-[18px] text-[#777E90] mb-10">Упростите свои планы для путешествия – с нами это легко!</p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-8">
+          <ul className="flex flex-wrap  justify-center gap-x-6 gap-y-8">
             {popularHotels.map(({ id, pic, rating, name, location, price, day }) => (
               <PopularHotelsCard key={id} pic={pic} rating={rating} name={name} location={location} price={price} day={day} />
             ))}
