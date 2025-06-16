@@ -17,7 +17,7 @@ const Footer = () => {
               <img src={footLogo} alt="Pic" />
             </a>
             <div className='flex items-start  '>
-              <div className='w-full  md:max-w-[282px] md:me-[137px]'>
+              <div className='w-full  md:max-w-[282px] md:me-12 lg:me-[137px]'>
                 <p className='md:text-sm text-xs text-[#777E90]  mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
                 <ul className='flex gap-x-6  '>
                   {socialIcons.map((item) => (
@@ -27,19 +27,18 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
-              <div className='flex gap-10 md:gap-x-[145px]'>
-
+              <div className='flex gap-10 lg:gap-x-[145px]'>
                 <ul className='flex flex-col gap-y-1 md:gap-y-3' >
                   {locations.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-1 md:gap-y-3'>
+                <ul className='flex flex-col gap-y-1 lg:gap-y-3'>
                   {hotels.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-1 md:gap-y-3' >
+                <ul className='flex flex-col gap-y-1 lg:gap-y-3' >
                   {generalInfo.map((item) => (
                     <FootItem item={item} />
                   ))}
