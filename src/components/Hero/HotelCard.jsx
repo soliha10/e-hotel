@@ -5,7 +5,7 @@ const HotelCard = ({ image, rating, name, price, location }) => {
 
   return (
     <div
-      className="relative md:w-[486px] w-[350px] rounded-lg overflow-hidden    text-white"
+      className="relative min-[380px]:w-[350px] md:w-[486px] sm:w-[300px] rounded-lg overflow-hidden    text-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

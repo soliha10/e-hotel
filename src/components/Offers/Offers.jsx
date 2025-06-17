@@ -108,32 +108,47 @@ const Offers = () => {
 
         </div>
       </div>
-          <Swiper
-            ref={swiperRef}
-            slidesPerView="auto"
-            spaceBetween={24}
-            loop={false}
-            centeredSlides={false}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            onMouseMove={Autoplay}
-            navigation={false}
-            modules={[Autoplay]}
-            className="mySwiper"
-          >
-            {offers.map(({ id, pic, discount, name, price }) => (
-              <SwiperSlide >
-                <div key={id} className="w-[282px] flex flex-col relative gap-y-3 ">
-                  <img className="rounded-3xl  " src={pic} alt="pic" />
-                  <span className="absolute w-[100px] text-center bg-[#232E40] p-2 text-white font-medium text-sm rounded-3xl top-3 left-3  ">Скидка {discount}</span>
-                  <strong className="text-[#232E40] text-[18px] font-semibold  tracking-[0.38px] leading-[25px] ">{name}</strong>
-                  <span className="text-[#777E90] font-semibold">от {price} </span>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <Swiper
+        ref={swiperRef}
+        slidesPerView="auto"
+        spaceBetween={24}
+        loop={false}
+        centeredSlides={false}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          380: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+          },
+         
+        }}
+        onMouseMove={Autoplay}
+        navigation={false}
+        modules={[Autoplay]}
+        className="mySwiper"
+      >
+        {offers.map(({ id, pic, discount, name, price }) => (
+          <SwiperSlide >
+            <div key={id} className=" min-[380px]:w-[250px] md:w-[282px] flex flex-col relative gap-y-3 ">
+              <img className="rounded-3xl  " src={pic} alt="pic" />
+              <span className="absolute w-[100px] text-center bg-[#232E40] p-2 text-white font-medium text-sm rounded-3xl top-3 left-3  ">Скидка {discount}</span>
+              <strong className="text-[#232E40] text-[18px] font-semibold  tracking-[0.38px] leading-[25px] ">{name}</strong>
+              <span className="text-[#777E90] font-semibold">от {price} </span>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   )
 }

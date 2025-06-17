@@ -88,6 +88,21 @@ const Hero = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        breakpoints={{
+          380: {
+             slidesPerView: 1,
+            spaceBetween: 20,
+          }, 
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 24,
+          },
+          
+        }}
         onMouseMove={Autoplay}
         navigation={false}
         modules={[Autoplay]}

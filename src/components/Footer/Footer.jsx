@@ -16,7 +16,7 @@ const Footer = () => {
             <a href="/" className='mb-4 inline-block'>
               <img src={footLogo} alt="Pic" />
             </a>
-            <div className='flex items-start  flex-wrap justify-between   '>
+            <div className='flex items-start  flex-wrap justify-between gap-1   '>
               <div className='w-full  md:max-w-[282px] md:me-12 lg:me-[137px]'>
                 <p className='md:text-sm text-xs text-[#777E90] min-[380px]:mb-4 md:mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
                 <ul className='flex gap-x-6  '>
