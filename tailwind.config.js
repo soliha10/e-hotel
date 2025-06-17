@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         onest: ['Onest', 'sans-serif'], 
       },
+      
     },
   },
   plugins: [],

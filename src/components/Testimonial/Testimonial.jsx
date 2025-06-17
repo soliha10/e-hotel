@@ -42,9 +42,9 @@ const Testimonial = () => {
     <section className="bg-[#232E40] bg-opacity-90 py-20 mx-auto">
       <div className="w-full max-w-[1240px] left-[-10px] md:mx-auto px-5">
         <div className="">
-          <div className="flex items-center justify-between">
-            <h2 className=" text-[#fff] text-2xl  md:text-[32px] font-bold mb-10 ">Что думают о нас туристы?</h2>
-            <div>
+          <div className="flex items-center justify-between mb-10">
+            <h2 className=" text-[#fff] text-2xl  md:text-[32px] font-bold  ">Что думают о нас туристы?</h2>
+            <div className="flex items-center">
               <button onClick={() => {
                 swiperRef.current.swiper.slidePrev();
                 setActiveBtn("prev")

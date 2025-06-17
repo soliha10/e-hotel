@@ -21,7 +21,7 @@ const Header = () => {
               <li><a href="/">Транспорт</a></li>
             </ul>
           </nav>
-          <form className=" ms-auto me-4 md:ms-0 md:me-0 flex md:gap-3 lg:gap-6">
+          <form className=" hidden ms-auto me-4 md:ms-0 md:me-0 md:flex md:gap-3 lg:gap-6">
             <select className="bg-transparent outline-none text-xs lg:text-base">
               <option className="text-black" value="usd">USD</option>
               <option className="text-black" value="uzs">UZS</option>
@@ -52,6 +52,24 @@ const Header = () => {
               <li><a href="/">Транспорт</a></li>
             </ul>
 
+            <form className=" ms-auto me-4 flex items-center flex-col gap-3 ">
+              <div className="mb-4">
+
+              <select className="bg-transparent outline-none text-xs w-16 ">
+                <option className="text-black" value="usd">USD</option>
+                <option className="text-black" value="uzs">UZS</option>
+              </select>
+              <select className="bg-transparent outline-none text-xs w-16">
+                <option className="text-black " value="russian">Русский</option>
+                <option className="text-black" value="uzbek">Узбекский</option>
+              </select>
+              </div>
+
+              <button className="flex items-center text-xs  gap-2  font-medium py-3 px-2 bg-[#232E40] rounded-md">
+                <img src={user} alt="user" />
+                Войти
+              </button>
+            </form>
           </div>
         )}
       </div>

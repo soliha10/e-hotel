@@ -16,34 +16,34 @@ const Footer = () => {
             <a href="/" className='mb-4 inline-block'>
               <img src={footLogo} alt="Pic" />
             </a>
-            <div className='flex items-start  '>
+            <div className='flex items-start  flex-wrap justify-between   '>
               <div className='w-full  md:max-w-[282px] md:me-12 lg:me-[137px]'>
-                <p className='md:text-sm text-xs text-[#777E90]  mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
+                <p className='md:text-sm text-xs text-[#777E90] min-[380px]:mb-4 md:mb-12'>Лучшая платформа для бронирования отелей в Узбекистане</p>
                 <ul className='flex gap-x-6  '>
                   {socialIcons.map((item) => (
-                    <li >
+                    <li className='min-[380px]:mb-4' >
                       <a className='w-6 h-6 inline-block' href="/">{item}</a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className='flex gap-10 lg:gap-x-[145px]'>
-                <ul className='flex flex-col gap-y-1 md:gap-y-3' >
+              {/* <div className='flex gap-10 flex-wrap lg:gap-x-[145px]'> */}
+                <ul className='flex flex-col gap-y-1 md:gap-y-3 lg:me-[145px] ' >
                   {locations.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-1 lg:gap-y-3'>
+                <ul className='flex flex-col gap-y-1 lg:gap-y-3 lg:me-[145px]'>
                   {hotels.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-                <ul className='flex flex-col gap-y-1 lg:gap-y-3' >
+                <ul className='flex flex-col gap-y-1 lg:gap-y-3 ' >
                   {generalInfo.map((item) => (
                     <FootItem item={item} />
                   ))}
                 </ul>
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
