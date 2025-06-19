@@ -1,10 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const HotelCard = ({ image, rating, name, price, location }) => {
+const HotelCard = ({ id, image, rating, name, price, location }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(`/hotel/${id}`)
+  }
   return (
     <div
+      onClick={handleClick}
       className="relative min-[380px]:w-[350px] md:w-[486px] sm:w-[300px] rounded-lg overflow-hidden    text-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -13,14 +19,14 @@ const HotelCard = ({ image, rating, name, price, location }) => {
       <span className="absolute top-6 right-6 bg-yellow-400  rounded-full w-[31px] h-[30px] text-xs text-[#232E40] font-medium flex items-center justify-center">
         {rating}
       </span>
-       <div className="absolute h-[90px] md:hidden mt-auto  rounded-b-3xl inset-0 bg-[#1C253480]  flex items-start justify-between py-4 px-6  ">
-          <div >
-            <h3 className="text-base font-bold">{name}</h3>
-            <p className="text-sm text-[#B7BFD5] ">{location}</p>
-          </div>
-          <p className="text-lg font-bold">{price}</p>
+      <div className="absolute h-[90px] md:hidden mt-auto  rounded-b-3xl inset-0 bg-[#1C253480]  flex items-start justify-between py-4 px-6  ">
+        <div >
+          <h3 className="text-base font-bold">{name}</h3>
+          <p className="text-sm text-[#B7BFD5] ">{location}</p>
         </div>
-      {isHovered &&  (
+        <p className="text-lg font-bold">{price}</p>
+      </div>
+      {isHovered && (
         <div className="absolute h-[78px] mt-auto  rounded-b-3xl inset-0 bg-[#1C253480]  flex items-start justify-between py-4 px-6  ">
           <div >
             <h3 className="text-base font-bold">{name}</h3>

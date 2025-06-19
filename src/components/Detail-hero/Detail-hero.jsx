@@ -45,31 +45,20 @@ const DetailHero = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-between items-start mb-6 ">
               <div className="flex gap-6">
-                <img src={neptun} alt="" />
+                <img src={neptun} alt="" className="rounded-2xl" />
                 <div className="flex flex-col gap-6">
-                  <img src={evening} alt="" />
-                  <img src={scene} alt="" />
-                  <img src={palm} alt="" />
+                  <img src={evening} alt="" className="rounded-2xl" />
+                  <img src={scene} alt="" className="rounded-2xl" />
+                  <img src={palm} alt="" className="rounded-2xl" />
                 </div>
               </div>
 
               <DetailForm />
             </div>
-
-
-
-
-
-
-
-
           </div>
         </div>
-
-
-
       </div>
     </section>
   )

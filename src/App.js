@@ -7,11 +7,11 @@ import Popular from './components/Popular/Popular';
 import Steps from './components/Steps/Steps';
 import Testimonial from './components/Testimonial/Testimonial';
 import './index.css';
-import Details from './pages/Details';
+
 function App() {
 	return (
 		<div className='bg-[#FAFAFA]'>
-			{/* <section className="bg-[url('./assets/images/bg.png')]  pb-[147px] bg-no-repeat bg-cover ">
+			<section className="bg-[url('./assets/images/bg.png')]  pb-[147px] bg-no-repeat bg-cover ">
 				<Header />
 				<Hero />
 			</section>
@@ -22,8 +22,7 @@ function App() {
 				<Offers />
 				<Testimonial />
 			</main>
-			<Footer /> */}
-			<Details/>
+			<Footer />
 		</div>
 	);
 }

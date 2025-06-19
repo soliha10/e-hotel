@@ -15,41 +15,42 @@ import "../styles.css"
 const Hero = () => {
   const cardItems = [
     {
+      id: 1,
       image: neptun,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
-    {
+    { id: 2,
       image: evening,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
-    {
+    { id: 3,
       image: scene,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
-    {
+    {  id: 4,
       image: neptun,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
-    {
+    {  id: 5,
       image: evening,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
       price: 'от $120',
       location: '8 ул. Лянгар, Ташкент'
     },
-    {
+    {  id: 6,
       image: scene,
       rating: '8.9',
       name: "Hotel Neptun Tashkent Pool&Spa",
@@ -108,9 +109,9 @@ const Hero = () => {
         modules={[Autoplay]}
         className="mySwiper w-full "
       >
-        {cardItems.map(({ image, rating, name, price, location }, index) => (
+        {cardItems.map(({id, image, rating, name, price, location }, index) => (
           <SwiperSlide key={index} >
-            <HotelCard image={image} rating={rating} name={name} price={price} location={location} />
+            <HotelCard id={id} image={image} rating={rating} name={name} price={price} location={location} />
           </SwiperSlide>
         )
         )}
