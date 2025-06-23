@@ -135,9 +135,9 @@ const DetailInfo = () => {
 
             <div className="border-b border-[#777E90]  pb-8 mb-8">
               <h2 className="text-[31D2635] text-base md:text-lg lg:text-2xl font-bold mb-4 md:tracking-[0.48px] md:leading-[33.6px] ">Удобства отеля</h2>
-              <p className="text-[#1D2635] text-[10px] sm:text-xs md:text-sm  lg:text-[15px] md:tracking-[0.3px] md:leading-[22.5px] mb-3  ">Наш отель включает в себя уютные номера и общественные зоны для комфортного отдыха, а также:</p>
+              <p className="text-[#1D2635] text-[10px] sm:text-xs md:text-sm  lg:text-[15px] md:tracking-[0.3px] md:leading-[22.5px] mb-6  ">Наш отель включает в себя уютные номера и общественные зоны для комфортного отдыха, а также:</p>
 
-              <ul className="flex flex-col lg:h-[216px] flex-wrap gap-x-[40px] gap-y-6">
+              <ul className="flex lg:flex-col lg:h-[216px] flex-wrap gap-x-[40px] gap-y-6">
                 {comfort.map(({ id, pic, name }) => (
                   <InfoItem key={id} pic={pic} name={name} />
                 ))}

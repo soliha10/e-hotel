@@ -7,10 +7,15 @@ import scene from "../../assets/images/scene-d.png";
 import palm from "../../assets/images/palm-d.png";
 import save from "../../assets/images/save.svg"
 import send from "../../assets/images/send.svg"
+import { useState } from "react";
+import DetailShareModal from "./DetailShareModal";
 
 
 
 const DetailHero = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section>
       <div className="w-full max-w-[1240px] mx-auto px-5">
@@ -37,10 +42,10 @@ const DetailHero = () => {
               </div>
 
               <div className="flex text-[#2F3138] gap-6 ">
-                <button className="flex gap-1 md:gap-3 min-[380px]:text-[10px] "  >
-                  <img src={save} alt="" className="min-[380px]:w-4 min-[380px]:h-4" />Сохранить</button>
-                <button className="flex gap-1 md:gap-[10px] min-[380px]:text-[10px] ">
-                  <img src={send} alt="" className="min-[380px]:w-4 min-[380px]:h-4" />
+                <button className="flex gap-1 md:gap-3 min-[380px]:text-[10px] md:text-base "  >
+                  <img src={save} alt="" className="min-[380px]:w-4 min-[380px]:h-4 md:w-4 md:h-5 " />Сохранить</button>
+                <button onClick={() => setIsOpen(true)} className="flex gap-1 md:gap-[10px] min-[380px]:text-[10px] md:text-base ">
+                  <img src={send} alt="" className="min-[380px]:w-4 min-[380px]:h-4 md:w-4 md:h-5 " />
                   Поделиться</button>
               </div>
             </div>
@@ -59,6 +64,20 @@ const DetailHero = () => {
             </div>
           </div>
         </div>
+
+        {isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+            <div className="bg-white rounded-xl p-6 relative w-[90%] max-w-md shadow-lg">
+              <button onClick={() => setIsOpen(false)} className="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
+              > &times;</button>
+              <DetailShareModal />
+            </div>
+          </div>
+        )}
+
+
+
+
       </div>
     </section>
   )

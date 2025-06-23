@@ -25,8 +25,8 @@ const DetailForm = () => {
           <span className="text-[#7D848B] lg:text-base  font-normal ">/ночь</span>
         </strong>
 
-        <form action="" className="flex items-center flex-wrap gap-x-1 md:gap-x-4 ">
-          <div className="flex lg:w-[160px] flex-col gap-3 mb-2 ">
+        <form action="" className="flex items-center justify-between flex-wrap gap-x-1 md:gap-x-4 ">
+          <div className="flex w-[160px] flex-col gap-3 mb-2 ">
             <label htmlFor="" className="text-[#777E90] text-[14px]">Заезд</label>
             <select name="" id="" className="bg-[#F8F8FA] rounded-2xl py-4 pe-4 ps-[52px] appearance-none text-[#1D2635] " style={{
               backgroundImage: `url(${date})`,
@@ -37,7 +37,7 @@ const DetailForm = () => {
               <option value="">6/11/2023</option>
             </select>
           </div>
-          <div className="flex lg:w-[160px] flex-col gap-3 mb-2 ">
+          <div className="flex w-[160px] flex-col gap-3 mb-2 ">
             <label htmlFor="" className="text-[#777E90] text-[14px]">Выезд</label>
             <select name="" id="" className="bg-[#F8F8FA] rounded-2xl py-4 pe-4 ps-[52px] appearance-none text-[#1D2635] " style={{
               backgroundImage: `url(${date})`,
