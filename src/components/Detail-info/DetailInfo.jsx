@@ -116,40 +116,38 @@ const DetailInfo = () => {
   return (
     <section>
       <div className="w-full max-w-[1240px] mx-auto px-5">
-        <div className="flex items-start gap-6 ">
-
-
-          <div className="w-[792px]">
+        <div className="flex items-start flex-col flex-wrap  lg:flex-row gap-6 ">
+          <div className=" w-full  lg:w-[792px]">
             <div className="border-b border-[#777E90] mb-8">
-              <ul className="flex items-center gap-x-6 mb-6">
+              <ul className="flex items-end gap-x-6 mb-6">
 
-                <li><a href="/" className="text-[#232E40] lg:pb-[30px] border-b border-[#3276FF] inline-block" >Описание</a></li>
-                <li><a href="/" className="text-[#777E90] lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Наличие мест</a></li>
-                <li><a href="/" className="text-[#777E90] lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Что рядом?</a></li>
-                <li><a href="/" className="text-[#777E90] lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Дополнительные услуги</a></li>
+                <li><a href="/" className="text-[#232E40] text-[10px] sm:text-xs md:text-base pb-2 lg:pb-[30px] border-b border-[#3276FF] inline-block" >Описание</a></li>
+                <li><a href="/" className="text-[#777E90] text-[10px] sm:text-xs md:text-base pb-2 lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Наличие мест</a></li>
+                <li><a href="/" className="text-[#777E90]  text-[10px] sm:text-xs md:text-base pb-2 lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Что рядом?</a></li>
+                <li><a href="/" className="text-[#777E90] text-[10px] sm:text-xs md:text-base pb-2 lg:pb-[30px] border-b border-[#B7BFD5] inline-block">Дополнительные услуги</a></li>
               </ul>
-              <h2 className="text-[31D2635] text-2xl font-bold mb-4 tracking-[0.48px] leading-[33.6px] ">
+              <h2 className="text-[31D2635] text-base md:text-lg lg:text-2xl font-bold mb-4 tracking-[0.48px] leading-[33.6px] ">
                 Описание отеля
               </h2>
-              <p className="text-[#1D2635] text-[15px] tracking-[0.3px] leading-[22.5px] mb-3  ">Ощутите роскошь в ее лучших проявлениях, остановившись в нашем потрясающем четырехспальном отеле в Ташкенте. Расположенный в самом сердце города, наш отель предоставляет уникальную возможность насладиться комфортом и роскошью. Стильные номера с кондиционером оборудованы прекрасной террасой, частным бассейном и захватывающими видами, предоставляя проживающим незабываемый опыт.</p>
-              <p className="text-[#1D2635] text-[15px] tracking-[0.3px] leading-[22.5px] mb-8  ">Этот элегантный отель идеально подходит для групп, стремящихся к выдающемуся уровню роскоши и полного расслабления. Вас ждет простор и уединение в нашем отеле в Ташкенте, обеспечивающем высший уровень сервиса <button className="underline">читать далее</button></p>
+              <p className="text-[#1D2635] text-[10px] sm:text-xs md:text-sm  lg:text-[15px] md:tracking-[0.3px] md:leading-[22.5px] mb-3  ">Ощутите роскошь в ее лучших проявлениях, остановившись в нашем потрясающем четырехспальном отеле в Ташкенте. Расположенный в самом сердце города, наш отель предоставляет уникальную возможность насладиться комфортом и роскошью. Стильные номера с кондиционером оборудованы прекрасной террасой, частным бассейном и захватывающими видами, предоставляя проживающим незабываемый опыт.</p>
+              <p className="text-[#1D2635] text-[10px] sm:text-xs md:text-sm  lg:text-[15px] md:tracking-[0.3px] md:leading-[22.5px] mb-8  ">Этот элегантный отель идеально подходит для групп, стремящихся к выдающемуся уровню роскоши и полного расслабления. Вас ждет простор и уединение в нашем отеле в Ташкенте, обеспечивающем высший уровень сервиса <button className="underline">читать далее</button></p>
             </div>
 
             <div className="border-b border-[#777E90]  pb-8 mb-8">
-              <h2 className="text-[31D2635] text-2xl font-bold mb-4 tracking-[0.48px] leading-[33.6px] ">Удобства отеля</h2>
-              <p className="text-[#1D2635] text-[15px] tracking-[0.3px] leading-[22.5px] mb-3  ">Наш отель включает в себя уютные номера и общественные зоны для комфортного отдыха, а также:</p>
+              <h2 className="text-[31D2635] text-base md:text-lg lg:text-2xl font-bold mb-4 md:tracking-[0.48px] md:leading-[33.6px] ">Удобства отеля</h2>
+              <p className="text-[#1D2635] text-[10px] sm:text-xs md:text-sm  lg:text-[15px] md:tracking-[0.3px] md:leading-[22.5px] mb-3  ">Наш отель включает в себя уютные номера и общественные зоны для комфортного отдыха, а также:</p>
 
-              <ul className="flex flex-col h-[216px] flex-wrap gap-x-[40px] gap-y-6">
+              <ul className="flex flex-col lg:h-[216px] flex-wrap gap-x-[40px] gap-y-6">
                 {comfort.map(({ id, pic, name }) => (
                   <InfoItem key={id} pic={pic} name={name} />
                 ))}
               </ul>
             </div>
 
-            <div className="border-b border-[#777E90] mb-8 pb-8">
-              <div className="flex justify-between items-center ">
-                <h2 className="text-[31D2635] text-2xl font-bold mb-4 tracking-[0.48px] leading-[33.6px] ">Отзывы посетилетей</h2>
-                <button className="text-[#3B71FE] flex items-center gap-x-[8.5px]">Все отзывы <img src={blueArrow} alt="" /></button>
+            <div className="border-b border-[#777E90] md:mb-8 pb-8">
+              <div className="flex justify-between items-center mb-4 ">
+                <h2 className="text-[31D2635] text-base md:text-lg lg:text-2xl font-bold  tracking-[0.48px] leading-[33.6px] ">Отзывы посетилетей</h2>
+                <button className="text-[#3B71FE] flex items-center text-[10px] sm:text-xs md:text-sm  lg:text-[15px] gap-x-[8.5px]">Все отзывы <img src={blueArrow} alt="" /></button>
               </div>
               <Swiper
                 slidesPerView="auto"
@@ -190,7 +188,7 @@ const DetailInfo = () => {
           </div>
 
 
-          <img src={map} alt="" />
+          <img src={map} alt="" className="mb-4 md:mb-0 md:w-full lg:w-auto" />
         </div>
       </div>
     </section>

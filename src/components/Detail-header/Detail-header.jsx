@@ -55,14 +55,14 @@ const DetailHeader = () => {
             <form className=" ms-auto me-4 flex items-center flex-col gap-3 ">
               <div className="mb-4">
 
-              <select className="bg-transparent outline-none text-xs w-16 ">
-                <option className="text-black" value="usd">USD</option>
-                <option className="text-black" value="uzs">UZS</option>
-              </select>
-              <select className="bg-transparent outline-none text-xs w-16">
-                <option className="text-black " value="russian">Русский</option>
-                <option className="text-black" value="uzbek">Узбекский</option>
-              </select>
+                <select className="bg-transparent outline-none text-xs w-16 ">
+                  <option className="text-black" value="usd">USD</option>
+                  <option className="text-black" value="uzs">UZS</option>
+                </select>
+                <select className="bg-transparent outline-none text-xs w-16">
+                  <option className="text-black " value="russian">Русский</option>
+                  <option className="text-black" value="uzbek">Узбекский</option>
+                </select>
               </div>
 
               <button className="flex items-center text-xs  gap-2  font-medium py-4 px-2 bg-[#232E40] rounded-md">
