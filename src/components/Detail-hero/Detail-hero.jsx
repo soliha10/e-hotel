@@ -7,12 +7,9 @@ import scene from "../../assets/images/scene-d.png";
 import palm from "../../assets/images/palm-d.png";
 import save from "../../assets/images/save.svg"
 import send from "../../assets/images/send.svg"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DetailShareModal from "./DetailShareModal";
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -30,6 +27,17 @@ const DetailHero = () => {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  useEffect(() => {
+    if (isCarouselOpen || isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isCarouselOpen, isOpen])
+
 
   return (
     <section>
@@ -71,24 +79,24 @@ const DetailHero = () => {
                   onClick={() => { setIsCarouselOpen(true); setSelectedIndex(0) }}
                 />
                 <div className="flex flex-col min-[380px]:gap-2 md:gap-6">
-                  {images.slice(1).map((img, i) => (
-                    <img
-                      key={i + 1}
-                      src={img}
-                      alt=""
-                      className="rounded-2xl cursor-pointer"
-                      onClick={() => {
-                        const isLast = images.length - 1;
-                        setSelectedIndex(isLast ? 0 : images.length - 1);
-                        setIsCarouselOpen(true);
-                      }}
-                    />
-                  )
-                  )}
+                  {images.slice(1).map((img, i) => {
+                    const realIndex = i + 1;
+                    return (
+                      <img
+                        key={realIndex}
+                        src={img}
+                        alt=""
+                        className="rounded-2xl cursor-pointer"
+                        onClick={() => {
+                          const isLast = realIndex === images.length - 1;
+                          setSelectedIndex(isLast ? 0 : realIndex);
+                          setIsCarouselOpen(true);
+                        }}
+                      />
+                    );
+                  })}
                 </div>
-
               </div>
-
               <DetailForm />
             </div>
           </div>
@@ -118,9 +126,7 @@ const DetailHero = () => {
                     <img src={img} alt="pic" className="max-w-[100%] h-[400px] object-contain" />
                   </SwiperSlide>
                 ))}
-
               </Swiper>
-
               <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
@@ -131,7 +137,6 @@ const DetailHero = () => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper  mx-auto flex justify-center "
               >
-
                 {imagesCarousel.map((img, id) => (
                   <SwiperSlide key={id} className="opacity-[0.6]">
                     <img src={img} alt="pic" className="w-[180px] h-[150px] rounded-2xl" />
@@ -142,8 +147,6 @@ const DetailHero = () => {
             </div>
           </div>
         )}
-
-
         {isOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-6 relative w-[90%] max-w-md shadow-lg">
@@ -153,10 +156,6 @@ const DetailHero = () => {
             </div>
           </div>
         )}
-
-
-
-
       </div>
     </section>
   )
