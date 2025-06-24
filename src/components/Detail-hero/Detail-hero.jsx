@@ -22,6 +22,7 @@ import '../styles.css';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 const images = [neptun, evening, scene, palm]
+const imagesCarousel = [neptun, evening, scene, neptun]
 
 const DetailHero = () => {
 
@@ -71,10 +72,21 @@ const DetailHero = () => {
                 />
                 <div className="flex flex-col min-[380px]:gap-2 md:gap-6">
                   {images.slice(1).map((img, i) => (
-                    <img key={i} src={img} alt="" className="rounded-2xl cursor-pointer" onClick={() => { setIsCarouselOpen(true); setSelectedIndex(i + 1) }} />
-                  ))}
-
+                    <img
+                      key={i + 1}
+                      src={img}
+                      alt=""
+                      className="rounded-2xl cursor-pointer"
+                      onClick={() => {
+                        const isLast = images.length - 1;
+                        setSelectedIndex(isLast ? 0 : images.length - 1);
+                        setIsCarouselOpen(true);
+                      }}
+                    />
+                  )
+                  )}
                 </div>
+
               </div>
 
               <DetailForm />
@@ -99,9 +111,9 @@ const DetailHero = () => {
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper2 flex items-end mb-10 "
+                className="mySwiper2 flex items-end mb-10  "
               >
-                {images.map((img, idx) => (
+                {imagesCarousel.map((img, idx) => (
                   <SwiperSlide key={idx}>
                     <img src={img} alt="pic" className="max-w-[100%] h-[400px] object-contain" />
                   </SwiperSlide>
@@ -117,10 +129,10 @@ const DetailHero = () => {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper h-auto"
+                className="mySwiper  mx-auto flex justify-center "
               >
 
-                {images.map((img, id) => (
+                {imagesCarousel.map((img, id) => (
                   <SwiperSlide key={id} className="opacity-[0.6]">
                     <img src={img} alt="pic" className="w-[180px] h-[150px] rounded-2xl" />
                   </SwiperSlide>
