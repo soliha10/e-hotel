@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaInstagram, FaTelegram, FaTwitter } from 'react-icons/fa'
 
 const DetailShareModal = () => {

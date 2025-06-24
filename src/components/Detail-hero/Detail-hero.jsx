@@ -11,10 +11,24 @@ import { useState } from "react";
 import DetailShareModal from "./DetailShareModal";
 
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import '../styles.css';
+
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+const images = [neptun, evening, scene, palm]
 
 const DetailHero = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isCarouselOpen, setIsCarouselOpen] = useState(false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <section>
@@ -35,7 +49,7 @@ const DetailHero = () => {
               <div>
 
                 <h1 className=" min-[380px]:text-base md:text-2xl lg:text-[32px] text-[#1D2635]  font-bold tracking-[0.64px] leading-[45px] mb-4">Hotel Neptun Tashkent Pool&Spa</h1>
-                <span className="flex  min-[380px]:text-[10px]  items-center mb-6 gap-3">
+                <span className="flex  min-[380px]:text-[10px] lg:text-base  items-center mb-6 gap-3">
                   <img src={location} alt="" />
                   8 ул. Лянгар, Ташкент
                 </span>
@@ -50,13 +64,16 @@ const DetailHero = () => {
               </div>
             </div>
 
-            <div className="flex justify-between items-start min-[380px]:flex-col md:flex-row mb-6 ">
+            <div className="flex justify-between  items-start min-[380px]:flex-col md:flex-row mb-6 ">
               <div className="flex min-[380px]:gap-2 md:gap-6  ">
-                <img src={neptun} alt="" className="rounded-2xl w-60 sm:w-72 lg:w-[587px] lg:h-[498px]  " />
+                <img src={images[0]} alt="" className="rounded-2xl w-60 sm:w-72 lg:w-[587px] lg:h-[498px] cursor-pointer "
+                  onClick={() => { setIsCarouselOpen(true); setSelectedIndex(0) }}
+                />
                 <div className="flex flex-col min-[380px]:gap-2 md:gap-6">
-                  <img src={evening} alt="" className="rounded-2xl" />
-                  <img src={scene} alt="" className="rounded-2xl" />
-                  <img src={palm} alt="" className="rounded-2xl" />
+                  {images.slice(1).map((img, i) => (
+                    <img key={i} src={img} alt="" className="rounded-2xl cursor-pointer" onClick={() => { setIsCarouselOpen(true); setSelectedIndex(i + 1) }} />
+                  ))}
+
                 </div>
               </div>
 
@@ -64,6 +81,56 @@ const DetailHero = () => {
             </div>
           </div>
         </div>
+
+        {isCarouselOpen && (
+          <div className="bg-slate-500 bg-opacity-90 fixed inset-0 z-50 flex flex-col items-end gap-5  ">
+            <button onClick={() => { setIsCarouselOpen(false); setThumbsSwiper(null) }} className=" text-black   text-right text-4xl me-10"
+            > &times; </button>
+            <div className="max-w-[1000px]  mx-auto justify-center">
+
+              <Swiper
+                initialSlide={selectedIndex}
+                style={{
+                  '--swiper-navigation-color': '#fff',
+                  '--swiper-pagination-color': '#fff',
+                }}
+                loop={true}
+                spaceBetween={10}
+                navigation={true}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="mySwiper2 flex items-end mb-10 "
+              >
+                {images.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <img src={img} alt="pic" className="max-w-[100%] h-[400px] object-contain" />
+                  </SwiperSlide>
+                ))}
+
+              </Swiper>
+
+              <Swiper
+                onSwiper={setThumbsSwiper}
+                loop={true}
+                spaceBetween={10}
+                slidesPerView={4}
+                freeMode={true}
+                watchSlidesProgress={true}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="mySwiper h-auto"
+              >
+
+                {images.map((img, id) => (
+                  <SwiperSlide key={id} className="opacity-[0.6]">
+                    <img src={img} alt="pic" className="w-[180px] h-[150px] rounded-2xl" />
+                  </SwiperSlide>
+                ))}
+
+              </Swiper>
+            </div>
+          </div>
+        )}
+
 
         {isOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
